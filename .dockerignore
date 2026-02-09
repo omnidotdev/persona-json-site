@@ -1,0 +1,11 @@
+node_modules/
+.output/
+.nitro/
+.vite/
+.git/
+docs/
+*.md
+.gitignore
+.env
+.env.local
+.env.*.local

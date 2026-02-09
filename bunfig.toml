@@ -1,0 +1,3 @@
+[install]
+# Optimize for faster cold installs
+saveTextLockfile = true

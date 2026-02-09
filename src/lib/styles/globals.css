@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: var(--display-family);
+  --font-text: var(--text-family);
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  /* Custom persona.json colors */
+  --color-void: var(--void);
+  --color-indigo: var(--indigo);
+  --color-cyan: var(--cyan);
+  --color-glow: var(--glow);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  /* Deep void black palette */
+  --void-50: oklch(0.15 0.02 280);
+  --void-100: oklch(0.12 0.02 280);
+  --void-200: oklch(0.1 0.015 280);
+  --void-300: oklch(0.08 0.01 280);
+  --void-400: oklch(0.06 0.008 280);
+  --void-500: oklch(0.04 0.005 280);
+
+  /* Indigo/purple accent */
+  --indigo-300: oklch(0.75 0.18 280);
+  --indigo-400: oklch(0.65 0.22 280);
+  --indigo-500: oklch(0.55 0.25 280);
+  --indigo-600: oklch(0.45 0.22 280);
+
+  /* Cyan highlight */
+  --cyan-300: oklch(0.85 0.15 195);
+  --cyan-400: oklch(0.75 0.18 195);
+  --cyan-500: oklch(0.65 0.2 195);
+
+  /* Glow effects */
+  --glow-indigo: oklch(0.55 0.25 280 / 0.5);
+  --glow-cyan: oklch(0.65 0.2 195 / 0.5);
+
+  /* Theme variables */
+  --void: var(--void-300);
+  --indigo: var(--indigo-400);
+  --cyan: var(--cyan-400);
+  --glow: var(--glow-indigo);
+
+  --background: var(--void-300);
+  --foreground: oklch(0.92 0.01 280);
+  --primary: var(--indigo-400);
+  --primary-foreground: oklch(0.98 0.005 280);
+  --secondary: var(--cyan-400);
+  --secondary-foreground: oklch(0.05 0.01 195);
+  --muted: var(--void-100);
+  --muted-foreground: oklch(0.55 0.02 280);
+  --accent: var(--void-50);
+  --accent-foreground: oklch(0.92 0.01 280);
+  --border: oklch(0.2 0.03 280);
+  --ring: var(--indigo-400);
+  --radius: 0.5rem;
+
+  --display-family: var(--font-sans);
+  --text-family: var(--font-sans);
+}
+
+/* Dark mode is default */
+.light {
+  --background: oklch(0.98 0.005 280);
+  --foreground: var(--void-300);
+  --primary: var(--indigo-500);
+  --primary-foreground: oklch(0.98 0.005 280);
+  --secondary: var(--cyan-500);
+  --secondary-foreground: oklch(0.98 0.005 280);
+  --muted: oklch(0.94 0.01 280);
+  --muted-foreground: oklch(0.45 0.02 280);
+  --accent: oklch(0.96 0.01 280);
+  --accent-foreground: var(--void-300);
+  --border: oklch(0.88 0.02 280);
+  --ring: var(--indigo-500);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  .font-display {
+    font-weight: var(--display-weight, 400);
+  }
+  .font-text {
+    font-weight: var(--text-weight, 400);
+  }
+}
+
+/* Grid background pattern */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, oklch(0.2 0.03 280 / 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.2 0.03 280 / 0.4) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Glowing orb effect */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.glow-orb-indigo {
+  background: var(--glow-indigo);
+}
+
+.glow-orb-cyan {
+  background: var(--glow-cyan);
+}
+
+/* Code block styling */
+.code-block {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  background: oklch(0.06 0.015 280);
+  border: 1px solid oklch(0.15 0.03 280);
+  border-radius: var(--radius);
+}
+
+/* Slice tag styling */
+.slice-tag {
+  background: oklch(0.12 0.03 280);
+  border: 1px solid oklch(0.2 0.04 280);
+  transition: all 0.2s ease;
+}
+
+.slice-tag:hover {
+  background: oklch(0.15 0.04 280);
+  border-color: var(--indigo-400);
+  box-shadow: 0 0 20px var(--glow-indigo);
+}
