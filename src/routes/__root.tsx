@@ -5,7 +5,7 @@ import {
   createRootRouteWithContext,
 } from "@tanstack/react-router";
 
-import { ErrorBoundary } from "@/components/layout";
+import { ErrorBoundary, NotFound } from "@/components/layout";
 import app from "@/lib/config/app.config";
 import appCss from "@/lib/styles/globals.css?url";
 import ThemeProvider from "@/providers/ThemeProvider";
@@ -111,6 +111,7 @@ export const Route = createRootRouteWithContext<{
   }),
   loader: () => getThemeServerFn(),
   errorComponent: ErrorBoundary,
+  notFoundComponent: NotFound,
   component: RootComponent,
 });
 

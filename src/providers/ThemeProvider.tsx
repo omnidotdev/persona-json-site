@@ -1,5 +1,5 @@
 import { useRouter } from "@tanstack/react-router";
-import { createContext, use } from "react";
+import { createContext } from "react";
 
 import { setThemeServerFn } from "@/server/functions/theme";
 
@@ -26,14 +26,6 @@ const ThemeProvider = ({
     setThemeServerFn({ data: val }).then(() => router.invalidate());
 
   return <ThemeContext value={{ theme, setTheme }}>{children}</ThemeContext>;
-};
-
-export const useTheme = () => {
-  const val = use(ThemeContext);
-
-  if (!val) throw new Error("`useTheme` called outside of `<ThemeProvider />`");
-
-  return val;
 };
 
 export default ThemeProvider;
