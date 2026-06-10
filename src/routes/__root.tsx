@@ -107,6 +107,25 @@ export const Route = createRootRouteWithContext<{
         rel: "icon",
         href: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎭</text></svg>",
       },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon-16x16.png",
+      },
+      // .ico fallback for surfaces that don't read SVG favicons (link previews, iMessage)
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
+      },
     ],
   }),
   loader: () => getThemeServerFn(),
