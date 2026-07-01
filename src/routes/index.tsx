@@ -155,7 +155,7 @@ function HomePage() {
         </section>
 
         {/* Footer */}
-        <footer className="text-center">
+        <footer className="flex flex-wrap items-center justify-center gap-4 text-center">
           <a
             href="https://omni.dev"
             target="_blank"
@@ -163,6 +163,22 @@ function HomePage() {
             className="font-mono text-muted-foreground text-sm transition-colors hover:text-foreground"
           >
             omni.dev
+          </a>
+          <a
+            href="https://omni.dev/legal/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-muted-foreground text-sm transition-colors hover:text-foreground"
+          >
+            Privacy
+          </a>
+          <a
+            href="https://omni.dev/legal/terms"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-muted-foreground text-sm transition-colors hover:text-foreground"
+          >
+            Terms
           </a>
         </footer>
       </div>

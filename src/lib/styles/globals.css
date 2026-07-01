@@ -64,7 +64,7 @@
 
   --background: var(--void-300);
   --foreground: oklch(0.92 0.01 280);
-  --primary: var(--indigo-400);
+  --primary: var(--indigo-600);
   --primary-foreground: oklch(0.98 0.005 280);
   --secondary: var(--cyan-400);
   --secondary-foreground: oklch(0.05 0.01 195);
@@ -84,7 +84,7 @@
 .light {
   --background: oklch(0.98 0.005 280);
   --foreground: var(--void-300);
-  --primary: var(--indigo-500);
+  --primary: var(--indigo-600);
   --primary-foreground: oklch(0.98 0.005 280);
   --secondary: var(--cyan-500);
   --secondary-foreground: oklch(0.98 0.005 280);
