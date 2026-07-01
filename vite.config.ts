@@ -22,6 +22,14 @@ const config = defineConfig(({ command }) => ({
       preset: "node-server",
       // Inline srvx to avoid module resolution issues with Bun runtime
       externals: { inline: ["srvx"] },
+      routeRules: {
+        "/**": {
+          headers: {
+            "Permissions-Policy": "geolocation=(), camera=(), microphone=()",
+            "Cache-Control": "public, max-age=0, must-revalidate",
+          },
+        },
+      },
     }),
     viteTsConfigPaths({
       projects: ["./tsconfig.json"],

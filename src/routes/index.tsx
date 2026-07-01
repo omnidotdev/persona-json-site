@@ -180,6 +180,14 @@ function HomePage() {
           >
             Terms
           </a>
+          <a
+            href="https://omni.dev/legal/cookies"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-muted-foreground text-sm transition-colors hover:text-foreground"
+          >
+            Cookies
+          </a>
         </footer>
       </div>
     </div>
