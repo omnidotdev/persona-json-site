@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@omnidotdev/thornberry/base.css";
+@source "../../../node_modules/@omnidotdev/thornberry/build";
 
 @custom-variant dark (&:is(.dark *));
 
