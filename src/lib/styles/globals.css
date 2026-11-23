@@ -94,10 +94,26 @@
 
   --display-family: var(--font-sans);
   --text-family: var(--font-sans);
+
+  /* Code block and slice tag surfaces */
+  --code-surface: oklch(0.06 0.015 280);
+  --code-border: oklch(0.15 0.03 280);
+  --tag-surface: oklch(0.12 0.03 280);
+  --tag-surface-hover: oklch(0.15 0.04 280);
+  --tag-border: oklch(0.2 0.04 280);
+
+  /* Dark by default: render native scrollbars and controls dark too */
+  color-scheme: dark;
 }
 
 /* Dark mode is default */
 .light {
+  color-scheme: light;
+  --code-surface: var(--muted);
+  --code-border: var(--border);
+  --tag-surface: var(--muted);
+  --tag-surface-hover: var(--accent);
+  --tag-border: var(--border);
   --background: oklch(0.98 0.005 280);
   --card: var(--background);
   --popover: var(--background);
@@ -162,20 +178,20 @@
 /* Code block styling */
 .code-block {
   font-family: "IBM Plex Mono", ui-monospace, monospace;
-  background: oklch(0.06 0.015 280);
-  border: 1px solid oklch(0.15 0.03 280);
+  background: var(--code-surface);
+  border: 1px solid var(--code-border);
   border-radius: var(--radius);
 }
 
 /* Slice tag styling */
 .slice-tag {
-  background: oklch(0.12 0.03 280);
-  border: 1px solid oklch(0.2 0.04 280);
+  background: var(--tag-surface);
+  border: 1px solid var(--tag-border);
   transition: all 0.2s ease;
 }
 
 .slice-tag:hover {
-  background: oklch(0.15 0.04 280);
+  background: var(--tag-surface-hover);
   border-color: var(--indigo-400);
   box-shadow: 0 0 20px var(--glow-indigo);
 }
