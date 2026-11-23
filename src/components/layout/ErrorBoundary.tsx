@@ -1,3 +1,4 @@
+import { Button } from "@omnidotdev/thornberry/button";
 import {
   ErrorComponent,
   Link,
@@ -5,8 +6,6 @@ import {
   useMatch,
   useRouter,
 } from "@tanstack/react-router";
-
-import { Button } from "@/components/ui/button";
 
 import type { ErrorComponentProps } from "@tanstack/react-router";
 
