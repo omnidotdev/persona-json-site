@@ -9,11 +9,11 @@ export const Route = createFileRoute("/")({
 });
 
 const slices = [
-  { name: "identity", color: "text-cyan-400" },
-  { name: "voice", color: "text-indigo-300" },
-  { name: "personality", color: "text-cyan-300" },
-  { name: "branding", color: "text-indigo-400" },
-  { name: "capabilities", color: "text-cyan-400" },
+  { name: "identity", color: "text-cyan-700 dark:text-cyan-400" },
+  { name: "voice", color: "text-indigo-600 dark:text-indigo-300" },
+  { name: "personality", color: "text-cyan-800 dark:text-cyan-300" },
+  { name: "branding", color: "text-indigo-700 dark:text-indigo-400" },
+  { name: "capabilities", color: "text-cyan-700 dark:text-cyan-400" },
 ];
 
 const exampleCode = `{
