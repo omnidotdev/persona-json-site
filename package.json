@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@ark-ui/react": "^5.30.0",
+    "@fontsource/ibm-plex-mono": "5.3.0",
     "@omnidotdev/thornberry": "github:omnidotdev/thornberry#372ebb2",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/nitro-v2-vite-plugin": "^1.154.7",
